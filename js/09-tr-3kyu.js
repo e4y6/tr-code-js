@@ -29,6 +29,8 @@ You can assume that the number is not negative.            */
 Disaster!! The boat has caught fire!!
 You will be provided a string that lists many boat related items. If any of these items are "Fire" you must spring into action. Change any instance of "Fire" into "~~". Then return the string.    */
 
-  const fireFight = s => s.replace(/\bFire\b/g, '~~');
-  // console.log(fireFight('Boat Rudder Mast Boat Hull Water Fire Boat Deck Hull Fire Propeller Deck Fire Deck Boat Mast' ))
+  // const fireFight = s => s.replace(/\bFire\b/g, '~~');
+  // const fireFight = s => s.replace(/Fire/g, '~~');
+  const fireFight = s => s.replaceAll('Fire', '~~');
+  // console.log(fireFight('Boat Rudder Mast Boat Hull Water Fire Boat Deck Hull Fire Propeller Deck Fire Deck Boat Mast'));
 }
