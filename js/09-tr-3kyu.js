@@ -31,6 +31,7 @@ You will be provided a string that lists many boat related items. If any of thes
 
   // const fireFight = s => s.replace(/\bFire\b/g, '~~');
   // const fireFight = s => s.replace(/Fire/g, '~~');
-  const fireFight = s => s.replaceAll('Fire', '~~');
+  // const fireFight = s => s.replaceAll('Fire', '~~');
+  const fireFight = s => s.split('Fire').join('~~');
   // console.log(fireFight('Boat Rudder Mast Boat Hull Water Fire Boat Deck Hull Fire Propeller Deck Fire Deck Boat Mast'));
 }
