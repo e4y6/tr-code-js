@@ -35,3 +35,31 @@ You will be provided a string that lists many boat related items. If any of thes
   const fireFight = s => s.split('Fire').join('~~');
   // console.log(fireFight('Boat Rudder Mast Boat Hull Water Fire Boat Deck Hull Fire Propeller Deck Fire Deck Boat Mast'));
 }
+{
+  /** 7kyu Object 
+   * Give you a function animal, accept 1 parameter:obj like this:
+{name:"dog",legs:4,color:"white"}
+and return a string like this:
+"This white dog has 4 legs."     */
+
+  function animal(obj) {
+    const { color, name, legs } = obj;
+    return `This ${color} ${name} has ${legs} legs.`;
+  }
+  // console.log(animal({ name: 'dog', legs: 4, color: 'white' }));
+}
+{
+  /** 7 kyu  Calculate Two People's Individual Ages 
+   * Create a function that takes in the sum and age difference of two people, calculates their individual ages, and returns a pair of values (oldest age first) if those exist or null/None or {-1, -1} in C if:
+sum < 0
+difference < 0
+Either of the calculated ages come out to be negative  */
+
+  const getAges = (sum, difference) => {
+    const yangest = (sum - difference) / 2;
+    return sum < 0 || difference < 0 || yangest < 0
+      ? null
+      : [yangest + difference, yangest];
+  };
+  // console.log(getAges(25, 7));
+}
