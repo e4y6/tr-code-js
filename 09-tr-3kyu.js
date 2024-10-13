@@ -115,9 +115,11 @@ The input can be modified   */
   remove("Hi! !Hi Hi!") === ""
   remove("Hi! Hi!! Hi!") === "Hi!!"
   remove("Hi! !Hi! Hi!") === "!Hi!"        */
+//   function remove (string) {
+//  return (res=>res.length? res.join(' '):'') ( string.split(' ').filter(e=>e.split('!').length !==2))
+//   }
 
-  function remove (string) {
- return (res=>res.length? res.join(' '):'') ( string.split(' ').filter(e=>e.split('!').length !==2))
-  }
+const remove = string => (res => res.length ? res.join(' ') : '') ( string.split(' ').filter(e=>e.split('!').length !== 2))
+   
   console.log(remove("Hi! !Hi! Hi!"))
 }
