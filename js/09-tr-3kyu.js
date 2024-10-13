@@ -104,3 +104,22 @@ The input can be modified   */
   }
   // console.log(nicknameGenerator('Simon'));
 }
+
+{ /**   7 kyu  Exclamation marks series #7: Remove words 
+  Remove words from the sentence if they contain exactly one exclamation mark. Words are separated by a single space, without leading/trailing spaces.
+  Examples  
+  remove("Hi!") === ""
+  remove("Hi! Hi!") === ""
+  remove("Hi! Hi! Hi!") === ""
+  remove("Hi Hi! Hi!") === "Hi"
+  remove("Hi! !Hi Hi!") === ""
+  remove("Hi! Hi!! Hi!") === "Hi!!"
+  remove("Hi! !Hi! Hi!") === "!Hi!"        */
+//   function remove (string) {
+//  return (res=>res.length? res.join(' '):'') ( string.split(' ').filter(e=>e.split('!').length !==2))
+//   }
+
+const remove = string => (res => res.length ? res.join(' ') : '') ( string.split(' ').filter(e=>e.split('!').length !== 2))
+   
+  console.log(remove("Hi! !Hi! Hi!"))
+}
