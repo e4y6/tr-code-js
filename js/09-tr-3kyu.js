@@ -6,8 +6,8 @@ Note that numbers written as strings are strings and must be sorted with the oth
 
   function dbSort(a) {
     return [
-      ...a.filter(e => typeof e === 'number').sort((a, b) => a - b),
-      ...a.filter(e => typeof e === 'string').sort(),
+      ...a.filter((e) => typeof e === "number").sort((a, b) => a - b),
+      ...a.filter((e) => typeof e === "string").sort(),
     ];
   }
   // console.log(dbSort(['Banana', 'Orange', 'Apple', 'Mango', 0, 2, 2]));
@@ -19,7 +19,7 @@ For example, the number 417 is 110100001 in binary. Reversing the binary is 1000
 You can assume that the number is not negative.            */
 
   function reverseBits(n) {
-    return parseInt([...n.toString(2)].reverse().join(''), 2);
+    return parseInt([...n.toString(2)].reverse().join(""), 2);
   }
   // console.log(reverseBits(417));
 }
@@ -32,7 +32,7 @@ You will be provided a string that lists many boat related items. If any of thes
   // const fireFight = s => s.replace(/\bFire\b/g, '~~');
   // const fireFight = s => s.replace(/Fire/g, '~~');
   // const fireFight = s => s.replaceAll('Fire', '~~');
-  const fireFight = s => s.split('Fire').join('~~');
+  const fireFight = (s) => s.split("Fire").join("~~");
   // console.log(fireFight('Boat Rudder Mast Boat Hull Water Fire Boat Deck Hull Fire Propeller Deck Fire Deck Boat Mast'));
 }
 {
@@ -97,15 +97,16 @@ The input can be modified   */
   // }
   function nicknameGenerator(name) {
     return name.length < 4
-      ? 'Error: Name too short'
-      : 'aeiou'.indexOf(name[2]) + 1
+      ? "Error: Name too short"
+      : "aeiou".indexOf(name[2]) + 1
       ? name.slice(0, 4)
       : name.slice(0, 3);
   }
   // console.log(nicknameGenerator('Simon'));
 }
 
-{ /**   7 kyu  Exclamation marks series #7: Remove words 
+{
+  /**   7 kyu  Exclamation marks series #7: Remove words 
   Remove words from the sentence if they contain exactly one exclamation mark. Words are separated by a single space, without leading/trailing spaces.
   Examples  
   remove("Hi!") === ""
@@ -115,11 +116,52 @@ The input can be modified   */
   remove("Hi! !Hi Hi!") === ""
   remove("Hi! Hi!! Hi!") === "Hi!!"
   remove("Hi! !Hi! Hi!") === "!Hi!"        */
-//   function remove (string) {
-//  return (res=>res.length? res.join(' '):'') ( string.split(' ').filter(e=>e.split('!').length !==2))
-//   }
 
-const remove = string => (res => res.length ? res.join(' ') : '') ( string.split(' ').filter(e=>e.split('!').length !== 2))
-   
-  console.log(remove("Hi! !Hi! Hi!"))
+  // function remove(string) {
+  //   return ((res) => (res.length ? res.join(" ") : ""))(
+  //     string.split(" ").filter((e) => e.split("!").length !== 2)
+  //   );
+  // }
+
+  const remove = (string) =>
+    ((res) => (res.length ? res.join(" ") : ""))(
+      string.split(" ").filter((e) => e.split("!").length !== 2)
+    );
+
+  // console.log(remove("Hi! !Hi! Hi!"));
+}
+
+{
+  /** 8 kyu  Fun with ES6 Classes #1 - People, people, people
+Fun with ES6 Classes #1 - People, people, people
+Time for some OOP fun!
+
+Define a class Person with the following properties:
+
+A constructor that accepts 4 arguments: firstName/FirstName (defaults to "John" if not set), lastName/LastName (defaults to "Doe" if not set), age/Age (defaults to 0 if not set) and gender/Gender (defaults to "Male" if not set). These should be stored in this.firstName/this.FirstName, this.lastName/this.LastName, this.age/this.Age and this.gender/this.Gender respectively.
+A method sayFullName/SayFullName that accepts no arguments and returns the full name (e.g. "John Doe")
+A class/static method greetExtraTerrestrials/GreetExtraTerrestrials that accepts one parameter raceName and returns */
+
+  class Person {
+    static greetExtraTerrestrials(raceName) {
+      return `Welcome to Planet Earth ${raceName}`;
+    }
+
+    constructor(
+      firstName = "John",
+      lastName = "Doe",
+      age = 0,
+      gender = "Male"
+    ) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+      this.gender = gender;
+    }
+    sayFullName() {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+
+  // console.log(john);
 }
