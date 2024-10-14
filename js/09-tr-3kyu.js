@@ -163,5 +163,6 @@ A class/static method greetExtraTerrestrials/GreetExtraTerrestrials that accepts
     }
   }
 
+  const john = new Person();
   // console.log(john);
 }
