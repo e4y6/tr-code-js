@@ -183,7 +183,10 @@ A class/static method greetExtraTerrestrials/GreetExtraTerrestrials that accepts
   // return [a, b, c].filter((e) => e > 0).length === 2;
   // }
 
-  const twoArePositive = (a, b, c) =>
-    [a, b, c].filter((e) => e > 0).length === 2;
+  // const twoArePositive = (a, b, c) =>
+  // [a, b, c].filter((e) => e > 0).length === 2;
+
+  const twoArePositive = (a, b, c) => (a > 0) + (b > 0) + (c > 0) === 2;
+
   console.log(twoArePositive(0, 1, 2));
 }
