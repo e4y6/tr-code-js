@@ -118,7 +118,19 @@ The input can be modified   */
 
   const convertHashToArray = hash => Object.entries(hash);
 
-  console.log(
-    convertHashToArray({ name: 'Jeremy', age: 24, role: 'Software Engineer' }),
-  );
+  // console.log(
+  //   convertHashToArray({ name: 'Jeremy', age: 24, role: 'Software Engineer' }),
+  // );
+}
+
+{
+  function last(...args) {
+    console.log(args);
+    return args.length > 1
+      ? args.slice(-1)[0]
+      : args[0].length > 1
+      ? args[0].slice(-1)[0]
+      : args[0][0] ?? args[0];
+  }
+  console.log(last([7]));
 }
