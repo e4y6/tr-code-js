@@ -179,8 +179,11 @@ A class/static method greetExtraTerrestrials/GreetExtraTerrestrials that accepts
   twoArePositive(4, 6, 10) == false
   twoArePositive(-14, -3, -4) == false */
 
-  function twoArePositive(a, b, c) {
-    return [a, b, c].filter((e) => e > 0).length === 2;
-  }
+  // function twoArePositive(a, b, c) {
+  // return [a, b, c].filter((e) => e > 0).length === 2;
+  // }
+
+  const twoArePositive = (a, b, c) =>
+    [a, b, c].filter((e) => e > 0).length === 2;
   console.log(twoArePositive(0, 1, 2));
 }
