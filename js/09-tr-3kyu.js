@@ -144,12 +144,15 @@ The input can be modified   */
   //     : args[0][0] ?? args[0];
   // }
 
-  const last = (...args) =>
-    args.length > 1
-      ? args.slice(-1)[0]
-      : args[0].length > 1
-      ? args[0].slice(-1)[0]
-      : args[0][0] ?? args[0];
+  // const last = (...args) =>
+  //   args.length > 1
+  //     ? args.slice(-1)[0]
+  //     : args[0].length > 1
+  //     ? args[0].slice(-1)[0]
+  //     : args[0][0] ?? args[0];
+
+  const last = (a, ...args) =>
+    args.length ? args.slice(-1)[0] : a.length > 1 ? a.slice(-1)[0] : a[0] ?? a;
 
   console.log(last([7]));
 }
