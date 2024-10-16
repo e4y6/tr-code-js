@@ -112,9 +112,11 @@ The input can be modified   */
   should be converted into  
   [["age", 24], ["name", "Jeremy"], ["role", "Software Engineer"]] */
 
-  function convertHashToArray(hash) {
-    return Object.entries(hash);
-  }
+  // function convertHashToArray(hash) {
+  //   return Object.entries(hash);
+  // }
+
+  const convertHashToArray = hash => Object.entries(hash);
 
   console.log(
     convertHashToArray({ name: 'Jeremy', age: 24, role: 'Software Engineer' }),
