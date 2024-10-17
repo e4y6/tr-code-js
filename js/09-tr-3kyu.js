@@ -189,7 +189,8 @@ const modifyMultiply =(str,loc,num) => Array(num).fill(str.split(' ')[loc]).join
   //  return phrase.split(' ').map(e=> e.charAt()).map(e=>e= (s.includes(e.toLowerCase()) ? s.indexOf(e.toLowerCase()) : e)).join('')
   // }
     
-  const makePassword=(phrase, s='oi___s') => phrase.split(' ').map(e=> e.charAt()).map(e=>e= (s.includes(e.toLowerCase()) ? s.indexOf(e.toLowerCase()) : e)).join('')
-   
+  // const makePassword=(phrase, s='oi___s') => phrase.split(' ').map(e=> e.charAt()).map(e=>e= (s.includes(e.toLowerCase()) ? s.indexOf(e.toLowerCase()) : e)).join('')
+const makePassword=(phrase) => phrase.split(' ').map(e=> e.charAt()).join('').replace(/o/gi, '0').replace(/i/gi, '1').replace(/s/gi, '5')
+ 
   // console.log(makePassword('Keep Calm and Carry On'))
 }
