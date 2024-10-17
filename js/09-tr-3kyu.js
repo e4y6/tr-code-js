@@ -165,8 +165,11 @@ The input can be modified   */
 Example
 modifyMultiply ("This is a string", 3, 5)   */
 
-function modifyMultiply (str,loc,num) {
-return Array(num).fill(str.split(' ')[loc]).join('-')
-} 
+// function modifyMultiply (str,loc,num) {
+// return Array(num).fill(str.split(' ')[loc]).join('-')
+// } 
+
+const modifyMultiply =(str,loc,num) => Array(num).fill(str.split(' ')[loc]).join('-')
+  
     console.log(modifyMultiply("Is sloppiness in code caused by ignorance or apathy? I don't know and I don't care.",6 ,8))
 }
