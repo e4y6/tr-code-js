@@ -184,9 +184,12 @@ const modifyMultiply =(str,loc,num) => Array(num).fill(str.split(' ')[loc]).join
     Examples:  
   "Give me liberty or give me death"  --> "Gml0gmd"
   "Keep Calm and Carry On"            --> "KCaC0"   */
-  
-  function makePassword(phrase, s='oi___s') {
-   return phrase.split(' ').map(e=> e.charAt()).map(e=>e= (s.includes(e.toLowerCase()) ? s.indexOf(e.toLowerCase()) : e)).join('')
-  }
-  console.log(makePassword('Keep Calm and Carry On'))
+
+  // function makePassword(phrase, s='oi___s') {
+  //  return phrase.split(' ').map(e=> e.charAt()).map(e=>e= (s.includes(e.toLowerCase()) ? s.indexOf(e.toLowerCase()) : e)).join('')
+  // }
+    
+  const makePassword=(phrase, s='oi___s') => phrase.split(' ').map(e=> e.charAt()).map(e=>e= (s.includes(e.toLowerCase()) ? s.indexOf(e.toLowerCase()) : e)).join('')
+   
+  // console.log(makePassword('Keep Calm and Carry On'))
 }
