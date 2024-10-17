@@ -171,5 +171,22 @@ modifyMultiply ("This is a string", 3, 5)   */
 
 const modifyMultiply =(str,loc,num) => Array(num).fill(str.split(' ')[loc]).join('-')
   
-    console.log(modifyMultiply("Is sloppiness in code caused by ignorance or apathy? I don't know and I don't care.",6 ,8))
+    // console.log(modifyMultiply("Is sloppiness in code caused by ignorance or apathy? I don't know and I don't care.",6 ,8))
+}
+
+{ /** 
+  7 kyu  Password maker
+  One suggestion to build a satisfactory password is to start with a memorable phrase or sentence and make a password by extracting the first letter of each word.
+    Even better is to replace some of those letters with numbers (e.g., the letter O can be replaced with the number 0):
+        instead of including i or I put the number 1 in the password;
+      instead of including o or O put the number 0 in the password;
+      instead of including s or S put the number 5 in the password.
+    Examples:  
+  "Give me liberty or give me death"  --> "Gml0gmd"
+  "Keep Calm and Carry On"            --> "KCaC0"   */
+  
+  function makePassword(phrase, s='oi___s') {
+   return phrase.split(' ').map(e=> e.charAt()).map(e=>e= (s.includes(e.toLowerCase()) ? s.indexOf(e.toLowerCase()) : e)).join('')
+  }
+  console.log(makePassword('Keep Calm and Carry On'))
 }
