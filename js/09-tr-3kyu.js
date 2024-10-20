@@ -6,8 +6,8 @@ Note that numbers written as strings are strings and must be sorted with the oth
 
   function dbSort(a) {
     return [
-      ...a.filter(e => typeof e === 'number').sort((a, b) => a - b),
-      ...a.filter(e => typeof e === 'string').sort(),
+      ...a.filter((e) => typeof e === "number").sort((a, b) => a - b),
+      ...a.filter((e) => typeof e === "string").sort(),
     ];
   }
   // console.log(dbSort(['Banana', 'Orange', 'Apple', 'Mango', 0, 2, 2]));
@@ -19,7 +19,7 @@ For example, the number 417 is 110100001 in binary. Reversing the binary is 1000
 You can assume that the number is not negative.            */
 
   function reverseBits(n) {
-    return parseInt([...n.toString(2)].reverse().join(''), 2);
+    return parseInt([...n.toString(2)].reverse().join(""), 2);
   }
   // console.log(reverseBits(417));
 }
@@ -32,7 +32,7 @@ You will be provided a string that lists many boat related items. If any of thes
   // const fireFight = s => s.replace(/\bFire\b/g, '~~');
   // const fireFight = s => s.replace(/Fire/g, '~~');
   // const fireFight = s => s.replaceAll('Fire', '~~');
-  const fireFight = s => s.split('Fire').join('~~');
+  const fireFight = (s) => s.split("Fire").join("~~");
   // console.log(fireFight('Boat Rudder Mast Boat Hull Water Fire Boat Deck Hull Fire Propeller Deck Fire Deck Boat Mast'));
 }
 {
@@ -97,8 +97,8 @@ The input can be modified   */
   // }
   function nicknameGenerator(name) {
     return name.length < 4
-      ? 'Error: Name too short'
-      : 'aeiou'.indexOf(name[2]) + 1
+      ? "Error: Name too short"
+      : "aeiou".indexOf(name[2]) + 1
       ? name.slice(0, 4)
       : name.slice(0, 3);
   }
@@ -116,7 +116,7 @@ The input can be modified   */
   //   return Object.entries(hash);
   // }
 
-  const convertHashToArray = hash => Object.entries(hash);
+  const convertHashToArray = (hash) => Object.entries(hash);
 
   // console.log(
   //   convertHashToArray({ name: 'Jeremy', age: 24, role: 'Software Engineer' }),
@@ -157,7 +157,8 @@ The input can be modified   */
   // console.log(last([7]));
 }
 
-{ /**  
+{
+  /**  
 7 kyu  Multiply Word in String
     You are to write a function that takes a string as its first parameter. This string will be a string of words.
     You are expected to then use the second parameter, which will be an integer, to find the corresponding word in the given string. The first word would be represented by 0.
@@ -165,16 +166,18 @@ The input can be modified   */
 Example
 modifyMultiply ("This is a string", 3, 5)   */
 
-// function modifyMultiply (str,loc,num) {
-// return Array(num).fill(str.split(' ')[loc]).join('-')
-// } 
+  // function modifyMultiply (str,loc,num) {
+  // return Array(num).fill(str.split(' ')[loc]).join('-')
+  // }
 
-const modifyMultiply =(str,loc,num) => Array(num).fill(str.split(' ')[loc]).join('-')
-  
-    // console.log(modifyMultiply("Is sloppiness in code caused by ignorance or apathy? I don't know and I don't care.",6 ,8))
+  const modifyMultiply = (str, loc, num) =>
+    Array(num).fill(str.split(" ")[loc]).join("-");
+
+  // console.log(modifyMultiply("Is sloppiness in code caused by ignorance or apathy? I don't know and I don't care.",6 ,8))
 }
 
-{ /** 
+{
+  /** 
   7 kyu  Password maker
   One suggestion to build a satisfactory password is to start with a memorable phrase or sentence and make a password by extracting the first letter of each word.
     Even better is to replace some of those letters with numbers (e.g., the letter O can be replaced with the number 0):
@@ -188,9 +191,44 @@ const modifyMultiply =(str,loc,num) => Array(num).fill(str.split(' ')[loc]).join
   // function makePassword(phrase, s='oi___s') {
   //  return phrase.split(' ').map(e=> e.charAt()).map(e=>e= (s.includes(e.toLowerCase()) ? s.indexOf(e.toLowerCase()) : e)).join('')
   // }
-    
+
   // const makePassword=(phrase, s='oi___s') => phrase.split(' ').map(e=> e.charAt()).map(e=>e= (s.includes(e.toLowerCase()) ? s.indexOf(e.toLowerCase()) : e)).join('')
-const makePassword=(phrase) => phrase.split(' ').map(e=> e.charAt()).join('').replace(/o/gi, '0').replace(/i/gi, '1').replace(/s/gi, '5')
- 
+  const makePassword = (phrase) =>
+    phrase
+      .split(" ")
+      .map((e) => e.charAt())
+      .join("")
+      .replace(/o/gi, "0")
+      .replace(/i/gi, "1")
+      .replace(/s/gi, "5");
+
   // console.log(makePassword('Keep Calm and Carry On'))
+}
+
+{
+  /** 7 kyu  last digits of a number
+ Your job is to implement a function which returns the last D digits of an integer N as a list.
+Special cases:
+
+    If D > (the number of digits of N), return all the digits.
+    If D <= 0, return an empty list.
+
+Examples:
+
+N = 1
+D = 1
+result = [1]
+
+N = 1234
+D = 2
+result = [3, 4]
+
+N = 637547
+D = 6
+result = [6, 3, 7, 5, 4, 7]   */
+
+  const lastDigit = (n, d) =>
+    d <= 0 ? [] : [...(n + "").slice(-d)].map((e) => +e);
+
+  console.log(lastDigit(34625647867585, 10));
 }
