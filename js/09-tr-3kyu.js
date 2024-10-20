@@ -252,17 +252,27 @@ result = [6, 3, 7, 5, 4, 7]   */
   6   -->  "JavaScript"
   12  -->  "CoffeeScript"   */
 
-  const caffeineBuzz = (n) => {
-    if (!(n % 12)) {
-      return "CoffeeScript";
-    }
-    if (!(n % 6)) {
-      return "JavaScript";
-    }
-    if (!(n % 3)) {
-      return "Java";
-    }
-    return "mocha_missing!";
-  };
-  // console.log(caffeineBuzz(112));
+  // const caffeineBuzz = (n) => {
+  //   if (!(n % 12)) {
+  //     return "CoffeeScript";
+  //   }
+  //   if (!(n % 6)) {
+  //     return "JavaScript";
+  //   }
+  //   if (!(n % 3)) {
+  //     return "Java";
+  //   }
+  //   return "mocha_missing!";
+  // };
+
+  const caffeineBuzz = (n) =>
+    !(n % 12)
+      ? "CoffeeScript"
+      : !(n % 6)
+      ? "JavaScript"
+      : !(n % 3)
+      ? "Java"
+      : "mocha_missing!";
+
+  // console.log(caffeineBuzz(12));
 }
