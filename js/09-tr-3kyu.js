@@ -228,7 +228,8 @@ D = 6
 result = [6, 3, 7, 5, 4, 7]   */
 
   const lastDigit = (n, d) =>
-    d <= 0 ? [] : [...(n + "").slice(-d)].map((e) => +e);
+    // d <= 0 ? [] : [...(n + "").slice(-d)].map((e) => +e);
+    d > 0 ? [...(n + "").slice(-d)].map(Number) : [];
 
   console.log(lastDigit(34625647867585, 10));
 }
