@@ -390,12 +390,19 @@ Dog Years
   //   return [animal(catYears, 4), animal(dogYears, 5)];
   // };
 
+  // const animal = (age, rate) =>
+  //   age < 15 ? 0 : age < 24 ? 1 : (2 + (age - 24) / rate) ^ 0;
+  // const ownedCatAndDog = (catYears, dogYears) => [
+  //   animal(catYears, 4),
+  //   animal(dogYears, 5),
+  // ];
+
   const animal = (age, rate) =>
-    age < 15 ? 0 : age < 24 ? 1 : (2 + (age - 24) / rate) ^ 0;
+    age < 24 ? (age / 15) ^ 0 : (2 + (age - 24) / rate) ^ 0;
   const ownedCatAndDog = (catYears, dogYears) => [
     animal(catYears, 4),
     animal(dogYears, 5),
   ];
 
-  console.log(ownedCatAndDog(56, 64));
+  // console.log(ownedCatAndDog(56, 64));
 }
