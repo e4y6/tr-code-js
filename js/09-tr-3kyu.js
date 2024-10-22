@@ -408,3 +408,20 @@ Dog Years
     years.map((e, i) => (e < 24 ? (e / 15) ^ 0 : (2 + (e - 24) / (i + 4)) ^ 0));
   // console.log(ownedCatAndDog(56, 64));
 }
+
+{
+  /** 
+  7 kyu  Snail crawls up
+  The snail crawls up the column. During the day it crawls up some distance. During the night she sleeps, so she slides down for some distance (less than crawls up during the day).
+  
+  Your function takes three arguments:
+  
+      The height of the column (meters)
+      The distance that the snail crawls during the day (meters)
+      The distance that the snail slides down during the night (meters)
+  
+  Calculate number of day when the snail will reach the top of the column.   test passed:53, failed:2*/
+
+  const snail = (column, day, night) => Math.ceil(column / (day - night));
+  // console.log(snail(10, 3, 2));
+}
