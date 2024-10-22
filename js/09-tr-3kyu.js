@@ -381,14 +381,21 @@ Dog Years
     +9 dog years for second year
     +5 dog years for each year after that    */
 
-  const ownedCatAndDog = function (catYears, dogYears) {
-    const animal = (age, rate) => {
-      if (age < 15) return 0;
-      if (age < 24) return 1;
-      return (2 + (age - 24) / rate) ^ 0;
-    };
-    return [animal(catYears, 4), animal(dogYears, 5)];
-  };
+  // const ownedCatAndDog = function (catYears, dogYears) {
+  //   const animal = (age, rate) => {
+  //     if (age < 15) return 0;
+  //     if (age < 24) return 1;
+  //     return (2 + (age - 24) / rate) ^ 0;
+  //   };
+  //   return [animal(catYears, 4), animal(dogYears, 5)];
+  // };
+
+  const animal = (age, rate) =>
+    age < 15 ? 0 : age < 24 ? 1 : (2 + (age - 24) / rate) ^ 0;
+  const ownedCatAndDog = (catYears, dogYears) => [
+    animal(catYears, 4),
+    animal(dogYears, 5),
+  ];
 
   console.log(ownedCatAndDog(56, 64));
 }
