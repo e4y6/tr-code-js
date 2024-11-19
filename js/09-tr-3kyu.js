@@ -471,8 +471,13 @@ Examples
   //   );
   // };
 
+  // const digitalRoot = (n) =>
+  //   ("" + n).length < 2
+  //     ? n
+  //     : digitalRoot((n = (n + "").split("").reduce((sum, e) => sum + +e, 0)));
+
   const digitalRoot = (n) =>
-    ("" + n).length < 2
+    n <= 9
       ? n
       : digitalRoot((n = (n + "").split("").reduce((sum, e) => sum + +e, 0)));
 
