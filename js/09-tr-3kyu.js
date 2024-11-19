@@ -425,3 +425,51 @@ Dog Years
   const snail = (column, day, night) => Math.ceil(column / (day - night));
   // console.log(snail(10, 3, 2));
 }
+
+{
+  /**   6 kyu  Autocomplete! Yay!
+  It's time to create an autocomplete function! Yay!
+  
+  The autocomplete function will take in an input string and a dictionary array and return the values from 
+  the dictionary that start with the input string. If there are more than 5 matches, restrict your output 
+  to the first 5 results. If there are no matches, return an empty array.
+  
+  Example:
+  
+  autocomplete('ai', ['airplane','airport','apple','ball']) = ['airplane','airport']
+  
+  For this kata, the dictionary will always be a valid array of strings. Please return all results in the order
+   given in the dictionary, even if they're not always alphabetical. The search should NOT be case sensitive, 
+   but the case of the word should be preserved when it's returned.
+  
+  For example, "Apple" and "airport" would both return for an input of 'a'. However, they should return as 
+  "Apple" and "airport" in their original cases.
+  
+  Important note:
+  
+  Any input that is NOT a letter should be treated as if it is not there. For example, an input of "$%^" should
+   be treated as "" and an input of "ab*&1cd" should be treated as "abcd".  */
+
+  const autocomplete = (input, dictionary) =>
+    dictionary.filter((e) => RegExp(input).test(e.replace(/[^a-z]/gi, "")));
+  // console.log(autocomplete("ai", ["airplane", "airport", "apple", "ball"]));
+}
+{
+  /** 6 kyu  Sum of Digits / Digital Root
+Digital root is the recursive sum of all the digits in a number.
+Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+Examples
+    16  -->  1 + 6 = 7
+   942  -->  9 + 4 + 2 = 15  -->  1 + 5 = 6
+132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2   */
+
+  const digitalRoot = (n) => {
+    if (("" + n).length < 2) return n;
+    return digitalRoot(
+      (n = (n + "").split("").reduce((sum, e) => sum + +e, 0))
+    );
+  };
+
+  console.log(digitalRoot(356));
+}
