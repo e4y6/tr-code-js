@@ -464,12 +464,17 @@ Examples
 132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
 493193  -->  4 + 9 + 3 + 1 + 9 + 3 = 29  -->  2 + 9 = 11  -->  1 + 1 = 2   */
 
-  const digitalRoot = (n) => {
-    if (("" + n).length < 2) return n;
-    return digitalRoot(
-      (n = (n + "").split("").reduce((sum, e) => sum + +e, 0))
-    );
-  };
+  // const digitalRoot = (n) => {
+  //   if (("" + n).length < 2) return n;
+  //   return digitalRoot(
+  //     (n = (n + "").split("").reduce((sum, e) => sum + +e, 0))
+  //   );
+  // };
+
+  const digitalRoot = (n) =>
+    ("" + n).length < 2
+      ? n
+      : digitalRoot((n = (n + "").split("").reduce((sum, e) => sum + +e, 0)));
 
   console.log(digitalRoot(356));
 }
